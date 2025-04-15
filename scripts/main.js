@@ -47,15 +47,19 @@ document.addEventListener("DOMContentLoaded", () => {
           referrer = "https://snapchat.com";
         }
 
+        const ipResponse = await fetch("https://ipinfo.io/json");
+        const locationData = await ipResponse.json();
+
         const data = {
           username: window.username || "luc4.aq",
           question: question,
           deviceId: deviceId,
           gameSlug: window.gameSlug || "",
           referrer: referrer,
-          ip: "",
+          ip: locationData.ip,
           userAgent: navigator.userAgent,
           language: navigator.language,
+          location: locationData,
           requestTime: Math.floor(Date.now() / 1000),
         };
 
