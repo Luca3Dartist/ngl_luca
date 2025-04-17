@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const submitButton = document.querySelector("button.submit");
       const originalButtonText = submitButton.innerText;
-      submitButton.innerText = "Sending...";
+      //submitButton.innerText = "Sending...";
       submitButton.disabled = true;
 
       const question = document.getElementById("question").value.trim();
